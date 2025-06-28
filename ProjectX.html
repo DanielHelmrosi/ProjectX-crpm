@@ -16,7 +16,7 @@
             height: 100%;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: #000;
-            overflow-x: hidden;
+            overflow: hidden;
         }
 
         .background {
@@ -43,7 +43,7 @@
         .content {
             position: relative;
             z-index: 1;
-            height: 100vh;
+            height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -82,7 +82,6 @@
             box-shadow: 0 0 10px #ffaa00;
             text-decoration: none;
             margin-bottom: 20px;
-            display: inline-block;
         }
 
         .btn-play:hover {
@@ -118,6 +117,7 @@
             }
         }
 
+        /* Гамбургер меню */
         .hamburger {
             position: absolute;
             top: 20px;
@@ -134,6 +134,7 @@
             transition: 0.4s;
         }
 
+        /* Боковое меню */
         .side-menu {
             position: fixed;
             top: 0;
@@ -162,24 +163,6 @@
         .side-menu.open {
             left: 0;
         }
-
-        section#start {
-            padding: 60px 20px;
-            background-color: rgba(0, 0, 0, 0.85);
-            color: white;
-            text-align: center;
-        }
-
-        section#start h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-            color: #ffaa00;
-        }
-
-        section#start p {
-            font-size: 1.2em;
-            margin-bottom: 30px;
-        }
     </style>
 </head>
 <body>
@@ -196,7 +179,7 @@
 <!-- Боковое меню -->
 <div class="side-menu" id="sideMenu">
     <a href="#">Главное меню</a>
-    <a href="#start">Как начать играть</a>
+    <a href="#">Как начать играть</a>
     <a href="https://forum.geeks-rp.ru/" target="_blank">Форум</a>
 </div>
 
@@ -205,22 +188,15 @@
     <p class="subtitle fade-in" style="animation-delay: 1s;">
         Это самая лучшая копия Радмира с бонусом при регистрации
     </p>
-    <a class="btn-play fade-in" style="animation-delay: 2s;" href="#start">Играть</a>
+    <a class="btn-play fade-in" style="animation-delay: 2s;" href="https://forum.geeks-rp.ru/" target="_blank">Играть</a>
     <div class="extra-info fade-in" style="animation-delay: 3s;">
         <p>Добро пожаловать в <strong>ProjectX CRMP</strong> — проект, вдохновлённый легендарным Radmir RP! Мы предлагаем улучшенную механику, уникальные системы, стабильную экономику и дружелюбное сообщество.</p>
         <p>Подпишись на наш <a href="https://t.me/projectxcrmp" target="_blank">Telegram-канал</a>, чтобы не пропустить обновления, бонусы и важные новости!</p>
     </div>
 </div>
 
-<!-- Как начать играть -->
-<section id="start">
-    <h2>Как начать играть</h2>
-    <p>Скачай лаунчер и подключайся к серверу в пару кликов!</p>
-    <a href="project.rar" download class="btn-play">Скачать Connect</a>
-</section>
-
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function() {
         const fadeInElements = document.querySelectorAll('.fade-in');
         fadeInElements.forEach((el, index) => {
             el.style.animationDelay = `${index * 1}s`;
